@@ -1,2 +1,19 @@
-# Cloud-Native-SRE-Platform
-This project is a small online service that is designed to stay running, fix itself when things go wrong, and scale up when more people use it just like real systems at companies.
+# Cloud-Native Reliability Platform
+
+This project demonstrates how to design and operate a reliable cloud-based service
+using Kubernetes, monitoring, automation, and infrastructure-as-code.
+
+## Goals
+- High availability
+- Automatic recovery from failures
+- Observability and monitoring
+- Scalable and cost-aware infrastructure
+
+## Tech Stack (Planned)
+- Python (FastAPI)
+- Docker
+- Kubernetes
+- Prometheus & Grafana
+- Terraform
+- GitHub Actions
+- Cloud (TBD)
