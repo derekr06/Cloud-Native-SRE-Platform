@@ -1,19 +1,19 @@
 # Cloud-Native Reliability Platform
 
 This project demonstrates how to design and operate a reliable cloud-based service
-using Kubernetes, monitoring, automation, and infrastructure-as-code.
+using AWS, Kubernetes, monitoring, and infrastructure-as-code.
 
-## Goals
-- High availability
-- Automatic recovery from failures
-- Observability and monitoring
-- Scalable and cost-aware infrastructure
+## Project Goals
+- Build a highly available service
+- Enable automatic recovery from failures
+- Implement observability and monitoring
+- Follow cloud and SRE best practices
 
-## Tech Stack (Planned)
-- Python (FastAPI)
+## Tech Stack
+- AWS
+- Kubernetes (EKS)
 - Docker
-- Kubernetes
-- Prometheus & Grafana
 - Terraform
+- Prometheus & Grafana
 - GitHub Actions
-- Cloud (TBD)
+- Python (FastAPI)
