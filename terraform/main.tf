@@ -9,16 +9,6 @@ resource "aws_vpc" "main" {
 }
 
 
-# Public Subnet
-resource "aws_subnet" "public1" {
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = "10.0.1.0/24"
-  availability_zone = "us-east-1a"
-
-  tags = {
-    Name = "sre-public-subnet-1"
-  }
-}
 
 # Private Subnet
 resource "aws_subnet" "private1" {
@@ -57,4 +47,8 @@ resource "aws_route_table" "public" {
 resource "aws_route_table_association" "public1" {
   subnet_id      = aws_subnet.public1.id
   route_table_id = aws_route_table.public.id
+}
+
+output "web_public_ip" {
+  value = aws_instance.web.public_ip
 }
