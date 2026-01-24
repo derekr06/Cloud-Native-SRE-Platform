@@ -1,0 +1,11 @@
+# Format and validate
+terraform fmt
+terraform validate
+
+# See the plan
+terraform plan
+
+# Apply the changes
+terraform apply
+
+# created this file just as a reminder 

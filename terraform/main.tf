@@ -8,9 +8,14 @@ resource "aws_vpc" "main" {
   }
 }
 
+resource "aws_internet_gateway" "gw" {
+  vpc_id = aws_vpc.main.id
 
+  tags = {
+    Name = "sre-igw"
+  }
+}
 
-# Private Subnet
 resource "aws_subnet" "private1" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = "10.0.2.0/24"
@@ -21,16 +26,7 @@ resource "aws_subnet" "private1" {
   }
 }
 
-#create internet gateway 
-resource "aws_internet_gateway" "gw" {
-  vpc_id = aws_vpc.main.id
 
-  tags = {
-    Name = "sre-igw"
-  }
-}
-
-# create route table for public subnet 
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
 
@@ -42,13 +38,4 @@ resource "aws_route_table" "public" {
   tags = {
     Name = "sre-public-rt"
   }
-}
-
-resource "aws_route_table_association" "public1" {
-  subnet_id      = aws_subnet.public1.id
-  route_table_id = aws_route_table.public.id
-}
-
-output "web_public_ip" {
-  value = aws_instance.web.public_ip
 }
